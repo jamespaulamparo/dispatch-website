@@ -1,4 +1,3 @@
-/* GLOBAL FONTS & BASICS */
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Nunito:wght@400;700&display=swap');
 
 :root {
@@ -10,10 +9,7 @@
     --sdn-border: #1a1a1a;
 }
 
-/* === THE GLOBAL SHRINK RAY === */
 html {
-    /* DEFAULT is usually 16px. Setting this to 14px scales 
-       down ALL text, buttons, and padding by ~12.5% automatically. */
     font-size: 14px; 
 }
 
@@ -34,21 +30,26 @@ h1, h2, h3, h4, h5, h6, .nav-link, .btn {
     letter-spacing: 1px;
 }
 
-/* NAVIGATION - Slimmed Down */
+/* NAVIGATION BAR */
 .navbar {
     background-color: var(--sdn-dark) !important;
-    border-bottom: 3px solid var(--sdn-teal);
-    padding: 8px 0; /* Reduced from 15px */
+    border-bottom: 2px solid var(--sdn-teal); 
+    padding: 2px 0 !important; 
 }
+
 .navbar-brand img {
-    height: 40px; /* Reduced from 50px */
+    height: 30px; 
 }
+
 .nav-link {
     color: var(--sdn-teal) !important;
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1rem; 
     transition: all 0.2s;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
+
 .nav-link:hover, .nav-link.active {
     color: var(--sdn-cream) !important;
     text-shadow: 0 0 10px rgba(124, 224, 230, 0.5);
@@ -63,7 +64,6 @@ h1, h2, h3, h4, h5, h6, .nav-link, .btn {
     font-size: 1rem;
     padding: 8px 0; 
     
-    /* Crucial for the loop to work: */
     white-space: nowrap; 
     overflow: hidden; 
     position: relative;
@@ -72,22 +72,19 @@ h1, h2, h3, h4, h5, h6, .nav-link, .btn {
 
 .ticker-track {
     display: inline-block;
-    /* We use the same 'scroll-left' animation from the logos 
-       but make it 40s (slower) so people can actually read the text */
     animation: scroll-left 40s linear infinite; 
 }
 
 .ticker-item {
     display: inline-block;
-    padding-right: 50px; /* Space between the end of Set 1 and start of Set 2 */
+    padding-right: 50px; 
 }
 
-/* Pause the ticker when you hover over it so users can read closely */
 .news-ticker-container:hover .ticker-track {
     animation-play-state: paused;
 }
 
-/* HERO SECTION - Significantly Shorter */
+/* HERO SECTION */
 .hero-section {
     position: relative;
     background: linear-gradient(rgba(18, 21, 26, 0.7), rgba(18, 21, 26, 0.9)), 
@@ -95,7 +92,7 @@ h1, h2, h3, h4, h5, h6, .nav-link, .btn {
     background-size: cover;
     background-position: center;
     
-    /* CHANGED: 70vh was huge. 45vh is sleek for desktop. */
+
     min-height: 90vh; 
     
     display: flex;
@@ -103,14 +100,12 @@ h1, h2, h3, h4, h5, h6, .nav-link, .btn {
     border-bottom: 4px solid var(--sdn-cream);
 }
 
-/* BUTTONS */
 .btn {
     border-radius: 0px;
     border: 2px solid var(--sdn-cream);
     font-weight: 700;
     position: relative;
     transition: all 0.2s;
-    /* Optional: Make buttons slightly less chunky */
     padding: 0.375rem 1.2rem; 
 }
 .btn-primary {
@@ -140,7 +135,7 @@ h1, h2, h3, h4, h5, h6, .nav-link, .btn {
     transform: translate(-2px, -2px);
 }
 
-/* CARDS - Transition Fixed Here */
+/* CARDS */
 .sdn-card {
     background-color: var(--sdn-cream);
     color: var(--sdn-dark);
@@ -149,9 +144,8 @@ h1, h2, h3, h4, h5, h6, .nav-link, .btn {
     padding: 0;
     height: 100%;
     position: relative;
-    box-shadow: 6px 6px 0px rgba(0,0,0,0.5); /* Slightly smaller shadow */
+    box-shadow: 6px 6px 0px rgba(0,0,0,0.5); 
     
-    /* FIX: Added fade transition here */
     transition: transform 0.2s, background-color 0.3s ease-in-out;
 }
 .sdn-card:hover {
@@ -162,14 +156,14 @@ h1, h2, h3, h4, h5, h6, .nav-link, .btn {
 .card-header-strip {
     background-color: #e3d5bd;
     border-bottom: 2px solid var(--sdn-border);
-    padding: 8px 15px; /* Tighter padding */
+    padding: 8px 15px; 
     font-weight: 700;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-/* HERO IMAGES - Scaled Down & Fixed */
+/* HERO IMAGES */
 .roster-img-container {
     background-color: #776a5a; 
     border-bottom: 2px solid var(--sdn-border);
@@ -183,11 +177,8 @@ h1, h2, h3, h4, h5, h6, .nav-link, .btn {
 .roster-img-container img {
     width: 100%;
     height: 100%;
-    /* FIX: Covers the box, no gaps */
     object-fit: cover; 
-    /* FIX: Focuses on faces */
     object-position: top center; 
-    /* FIX: Default zoom state */
     transform: scale(1.15); 
     transition: transform 0.3s ease, background-color 0.3s;
 }
@@ -201,7 +192,7 @@ h1, h2, h3, h4, h5, h6, .nav-link, .btn {
 .section-title {
     border-left: 5px solid var(--sdn-orange);
     padding-left: 15px;
-    margin-bottom: 30px; /* Reduced space */
+    margin-bottom: 30px; 
     color: var(--sdn-cream);
 }
 
@@ -209,66 +200,56 @@ h1, h2, h3, h4, h5, h6, .nav-link, .btn {
    INFINITE PARTNER CAROUSEL
    ========================================= */
 
-/* The outer wrapper that crops the moving track */
 .logos-overflow-wrap {
     overflow: hidden;
     white-space: nowrap;
     padding: 20px 0;
-    /* Adds a subtle vignette fade on the edges so logos don't just pop out of nowhere */
     mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
-/* The track that holds the double set of logos and moves */
 .logos-track {
     display: inline-block;
-    /* The animation definition: name, duration, curve, repeat */
     animation: scroll-left 35s linear infinite;
 }
 
 /* The actual logo images */
 .partner-logo-img {
-    height: 300px; /* Enforce uniform height */
-    width: auto;  /* Maintain aspect ratio */
-    margin: 0 20px; /* Spacing between logos */
+    height: 300px; 
+    width: auto;  
+    margin: 0 20px; 
     transition: all 0.3s ease-in-out;
 }
 
-/* Light up the logo slightly on hover */
 .partner-logo-img:hover {
     filter: grayscale(0%) brightness(100%);
     transform: scale(1.10);
 }
 
-/* The animation keyframes that make it loop */
 @keyframes scroll-left {
     0% {
-        /* Start at the beginning */
         transform: translateX(0);
     }
     100% {
-        /* Move exactly 50% to the left. Because we duplicated the list, 
-           the 50% mark looks exactly like the start mark. */
         transform: translateX(-50%);
     }
 }
 
-/* On mobile, speed it up slightly as there is less distance to travel */
 @media (max-width: 768px) {
     .logos-track {
         animation: scroll-left 20s linear infinite;
     }
     .partner-logo-img {
-        height: 40px; /* Slightly smaller logos on phone */
+        height: 40px;
         margin: 0 25px;
     }
 }
 
-/* FOOTER - Compacted */
+/* FOOTER*/
 footer {
     background-color: #0b0f19;
     color: #8fa1b3;
-    padding-top: 50px; /* Reduced from 80px */
+    padding-top: 50px;
     font-size: 0.85rem;
 }
 footer h5 {
@@ -298,13 +279,12 @@ footer a:hover {
    MOBILE RESPONSIVENESS
    ========================================= */
 @media (max-width: 768px) {
-    /* Reset font size for mobile so text isn't too tiny to read */
     html {
         font-size: 16px; 
     }
 
     .hero-section {
-        min-height: 40vh; /* Even smaller on phone */
+        min-height: 40vh;
         background-position: center top;
     }
     h1 {
@@ -318,7 +298,7 @@ footer a:hover {
         box-shadow: 4px 4px 0px rgba(0,0,0,0.5);
     }
     .roster-img-container {
-        height: 200px; /* Mobile needs slightly taller images for visibility */
+        height: 200px; 
     }
     .container {
         padding-left: 20px;
