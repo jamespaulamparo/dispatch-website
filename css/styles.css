@@ -87,17 +87,33 @@ h1, h2, h3, h4, h5, h6, .nav-link, .btn {
 /* HERO SECTION */
 .hero-section {
     position: relative;
-    background: linear-gradient(rgba(18, 21, 26, 0.7), rgba(18, 21, 26, 0.9)), 
-              url('../media/dispatch_commercial.gif'); 
-    background-size: cover;
-    background-position: center;
-    
-
-    min-height: 90vh; 
-    
+    min-height: 90vh; /* used to change hero size */
     display: flex;
     align-items: center;
     border-bottom: 4px solid var(--sdn-cream);
+    overflow: hidden;   
+}
+
+.hero-bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;      
+}
+
+/* The dark tint overlay */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* The dark gradient tint */
+    background: linear-gradient(rgba(18, 21, 26, 0.7), rgba(18, 21, 26, 0.9));
+    z-index: 1; /* Sits vertically between video (0) and text (2) */
 }
 
 .btn {

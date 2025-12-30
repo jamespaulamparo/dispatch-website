@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDN | Superhero Dispatch Network</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="news-ticker-container overflow-hidden">
+        <div class="ticker-track">
+            <span class="ticker-item">
+                <i class="fas fa-exclamation-triangle me-2"></i> URGENT: Red Ring activity confirmed in Sector 7. Citizens advised to avoid "The Sardine" bar area.
+                <span class="mx-3 text-muted">///</span> 
+                <i class="fas fa-star me-2"></i> PR UPDATE: Phenomaman voted "Most Trustworthy Chin" for the 3rd year running!
+                <span class="mx-3 text-muted">///</span> 
+                <i class="fas fa-shield-alt me-2"></i> Do not approach the "Z-Team" for autographs while they are in combat.
+                <span class="mx-3 text-muted">///</span>
+            </span>
+
+            <span class="ticker-item">
+                <i class="fas fa-exclamation-triangle me-2"></i> URGENT: Red Ring activity confirmed in Sector 7. Citizens advised to avoid "The Sardine" bar area.
+                <span class="mx-3 text-muted">///</span> 
+                <i class="fas fa-star me-2"></i> PR UPDATE: Phenomaman voted "Most Trustworthy Chin" for the 3rd year running!
+                <span class="mx-3 text-muted">///</span> 
+                <i class="fas fa-shield-alt me-2"></i> Do not approach the "Z-Team" for autographs while they are in combat.
+                <span class="mx-3 text-muted">///</span>
+            </span>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <img src="../media/SDNLogo.webp" alt="SDN Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link active px-3" href="#">DASHBOARD</a>
+                    <a class="nav-link px-3" href="#">DATABASE</a>
+                    <a class="nav-link px-3" href="#">SERVICES</a>
+                    <a class="nav-link px-3 text-warning" href="#">LOGIN <i class="fas fa-lock ms-1"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <video autoplay muted loop playsinline class="hero-bg-video">
+           <source src="../media/sdn-commercial.webm" type="video/webm">
+        </video>
+
+        <div class="hero-overlay"></div>
+
+        <div class="container text-center position-relative" style="z-index: 2;">
+            <h1 class="display-1 fw-bold mb-3 text-white" style="text-shadow: 4px 4px 0 #000;">Let SDN be your rock.</h1>
+            <p class="lead mb-5 text-white opacity-90 fs-4">SDN's diverse array of heroes can solve any problem.</p>
+            <div>
+                <a href="#" class="btn btn-primary-red btn-lg px-5 py-3 me-3 shadow">REQUEST DISPATCH</a>
+                <a href="#" class="btn btn-outline-light btn-lg px-5 py-3">VIEW PLANS</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="container py-5">
+        <div class="row g-4 mt-2">
+            <div class="col-md-4">
+                <div class="sdn-card">
+                    <div class="card-header-strip">
+                        <span><i class="fas fa-chart-line"></i> METRICS</span>
+                        <i class="fas fa-ellipsis-h opacity-50"></i>
+                    </div>
+                    <div class="p-4">
+                        <h6 class="text-uppercase text-muted fw-bold">Dispatches YTD</h6>
+                        <h2 class="display-4 fw-bold text-dark my-2">104,201</h2>
+                        <div class="progress" style="height: 10px; border: 1px solid #333;">
+                            <div class="progress-bar bg-success" style="width: 85%"></div>
+                        </div>
+                        <small class="text-success fw-bold mt-2 d-block">↑ 12% EFFICENCY</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="sdn-card">
+                    <div class="card-header-strip">
+                        <span><i class="fas fa-users"></i> ACTIVE HEROES</span>
+                        <i class="fas fa-ellipsis-h opacity-50"></i>
+                    </div>
+                    <div class="p-4">
+                        <h6 class="text-uppercase text-muted fw-bold">Active Units</h6>
+                        <h2 class="display-4 fw-bold text-dark my-2">108</h2>
+                        <span class="badge bg-dark text-white rounded-0 p-2">Heroes Ready</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="sdn-card">
+                    <div class="card-header-strip">
+                        <span><i class="fas fa-broadcast-tower"></i> THREAT LEVEL</span>
+                        <i class="fas fa-ellipsis-h opacity-50"></i>
+                    </div>
+                    <div class="p-4">
+                        <h6 class="text-uppercase text-muted fw-bold">Current Sector Risk</h6>
+                        <h2 class="display-4 fw-bold text-primary my-2">LOW</h2>
+                        <small class="text-muted">Weather is clear. Villain activity minimal.</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-end mb-5">
+                <div class="col-md-8">
+                    <h2 class="section-title display-5 fw-bold">KNOW YOUR HEROES</h2>
+                    <p class="lead opacity-75">SDN provides only the finest heroes for your protection. Our heroes are camera-ready and combat-proven.</p>
+                </div>
+                <div class="col-md-4 text-end">
+                    <a href="#" class="btn btn-outline-light px-4">BROWSE FULL DATABASE</a>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-3 col-6">
+                    <div class="sdn-card">
+                        <div class="roster-img-container">
+                            <img src="../media/phenomaman.webp" class="card-img-top p-2" alt="Phenomaman">
+                        </div>
+                        <div class="card-body text-center p-3">
+                            <h4 class="fw-bold m-0">PHENOMAMAN</h4>
+                            <div class="text-muted small fw-bold mt-1">A-Team</div>
+                            <hr class="my-2 border-dark">
+                            <small>SDN's Greatest Hero</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-6">
+                    <div class="sdn-card">
+                        <div class="roster-img-container">
+                            <img src="../media/blonde-blazer.webp" class="card-img-top p-2" alt="Blonde Blazer">
+                        </div>
+                        <div class="card-body text-center p-3">
+                            <h4 class="fw-bold m-0">BLONDE BLAZER</h4>
+                            <div class="text-muted small fw-bold mt-1">Torrence Branch Leader</div>
+                            <hr class="my-2 border-dark">
+                            <small>Radiant Luminary</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-6">
+                    <div class="sdn-card">
+                        <div class="roster-img-container">
+                            <img src="../media/brainbook.webp" class="card-img-top p-2" alt="Brainbook">
+                        </div>
+                        <div class="card-body text-center p-3">
+                            <h4 class="fw-bold m-0">BRAINBOOK</h4>
+                            <div class="text-muted small fw-bold mt-1">A-Team</div>
+                            <hr class="my-2 border-dark">
+                            <small>Genius Intellect</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-6">
+                    <div class="sdn-card">
+                        <div class="roster-img-container">
+                            <img src="../media/pom-pom.webp" class="card-img-top p-2" alt="Pom Pom">
+                        </div>
+                        <div class="card-body text-center p-3">
+                            <h4 class="fw-bold m-0">POM POM</h4>
+                            <div class="text-muted small fw-bold mt-1">A-Team</div>
+                            <hr class="my-2 border-dark">
+                            <small>Agile Cheerleader</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 text-center border-top border-secondary partnership-section" style="background-color: #0b0e12; overflow: hidden;">
+        <div class="container mb-4">
+            <p class="text-uppercase fw-bold text-info ls-1">/// TRUSTED GLOBAL PARTNERS ///</p>
+            <p class="text-muted small opacity-50">Powering the world's defense infrastructure.</p>
+        </div>
+
+        <div class="logos-overflow-wrap">
+             <div class="logos-track">
+                <img src="../media/logos/vand-co.png" class="partner-logo-img" alt="Vand-Co">
+                <img src="../media/logos/yacht club.png" class="partner-logo-img" alt="Sharkboyzzz Yacht Club">
+                <img src="../media/logos/jollibee.png" class="partner-logo-img" alt="Jaboolee">
+                <img src="../media/logos/missubibi.png" class="partner-logo-img" alt="Missubibi">
+                <img src="../media/logos/bank.png" class="partner-logo-img" alt="Alligator Trading & Co.">
+
+                <img src="../media/logos/vand-co.png" class="partner-logo-img" alt="Vand-Co">
+                <img src="../media/logos/yacht club.png" class="partner-logo-img" alt="Sharkboyzzz Yacht Club">
+                <img src="../media/logos/jollibee.png" class="partner-logo-img" alt="Jaboolee">
+                <img src="../media/logos/missubibi.png" class="partner-logo-img" alt="Missubibi">
+                <img src="../media/logos/bank.png" class="partner-logo-img" alt="Alligator Trading & Co.">
+
+                <img src="../media/logos/vand-co.png" class="partner-logo-img" alt="Vand-Co">
+                <img src="../media/logos/yacht club.png" class="partner-logo-img" alt="Sharkboyzzz Yacht Club">
+                <img src="../media/logos/jollibee.png" class="partner-logo-img" alt="Jaboolee">
+                <img src="../media/logos/missubibi.png" class="partner-logo-img" alt="Missubibi">
+                <img src="../media/logos/bank.png" class="partner-logo-img" alt="Alligator Trading & Co.">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h5>Portfolio</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Superheroes</a></li>
+                        <li><a href="#">Investments</a></li>
+                        <li><a href="#">Attractions</a></li>
+                        <li><a href="#">Products</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Technologies</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Online Tracking</a></li>
+                        <li><a href="#">Facial Recognition</a></li>
+                        <li><a href="#">Data Collection</a></li>
+                        <li><a href="#">Analytics</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Team</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">The Z-Team</a></li>
+                        <li><a href="#">History</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Resources</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Get Help</a></li>
+                        <li><a href="#">Hero Manifesto</a></li>
+                        <li><a href="#">Credit Union</a></li>
+                        <li><a href="#">L.A.W. Rules</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-4">
+                        <div class="d-flex gap-3">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span>© 2025 Superhero Dispatch Network</span>
+                    </div>
+                    <div class="col-md-4 text-end">
+                        <a href="#" class="me-3">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
