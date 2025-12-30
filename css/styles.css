@@ -61,12 +61,30 @@ h1, h2, h3, h4, h5, h6, .nav-link, .btn {
     font-family: 'Rajdhani', sans-serif;
     font-weight: 700;
     font-size: 1rem;
+    padding: 8px 0; 
     
-    display: flex;
-    align-items: center; 
-    
-    padding: 4px 0; 
-    line-height: 1; 
+    /* Crucial for the loop to work: */
+    white-space: nowrap; 
+    overflow: hidden; 
+    position: relative;
+    z-index: 10;
+}
+
+.ticker-track {
+    display: inline-block;
+    /* We use the same 'scroll-left' animation from the logos 
+       but make it 40s (slower) so people can actually read the text */
+    animation: scroll-left 40s linear infinite; 
+}
+
+.ticker-item {
+    display: inline-block;
+    padding-right: 50px; /* Space between the end of Set 1 and start of Set 2 */
+}
+
+/* Pause the ticker when you hover over it so users can read closely */
+.news-ticker-container:hover .ticker-track {
+    animation-play-state: paused;
 }
 
 /* HERO SECTION - Significantly Shorter */
