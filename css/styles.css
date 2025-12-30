@@ -2,17 +2,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Nunito:wght@400;700&display=swap');
 
 :root {
-    --sdn-cream: #f4ebd9;    /* The folder color from the screenshots */
-    --sdn-dark: #12151a;     /* The dark background */
-    --sdn-blue: #2c3e50;     /* Dark Slate */
-    --sdn-teal: #7ce0e6;     /* The UI accent color */
-    --sdn-orange: #f2a950;   /* Button accents */
-    --sdn-border: #1a1a1a;   /* Hard borders */
+    --sdn-cream: #f4ebd9;
+    --sdn-dark: #12151a;
+    --sdn-blue: #2c3e50;
+    --sdn-teal: #7ce0e6;
+    --sdn-orange: #f2a950;
+    --sdn-border: #1a1a1a;
+}
+
+/* === THE GLOBAL SHRINK RAY === */
+html {
+    /* DEFAULT is usually 16px. Setting this to 14px scales 
+       down ALL text, buttons, and padding by ~12.5% automatically. */
+    font-size: 14px; 
 }
 
 body {
     font-family: 'Nunito', sans-serif;
-    /* Creating the technical grid background */
     background-color: var(--sdn-dark);
     background-image: 
         linear-gradient(rgba(124, 224, 230, 0.05) 1px, transparent 1px),
@@ -28,14 +34,14 @@ h1, h2, h3, h4, h5, h6, .nav-link, .btn {
     letter-spacing: 1px;
 }
 
-/* NAVIGATION - The "Header Bar" look */
+/* NAVIGATION - Slimmed Down */
 .navbar {
     background-color: var(--sdn-dark) !important;
     border-bottom: 3px solid var(--sdn-teal);
-    padding: 15px 0;
+    padding: 8px 0; /* Reduced from 15px */
 }
 .navbar-brand img {
-    height: 50px;
+    height: 40px; /* Reduced from 50px */
 }
 .nav-link {
     color: var(--sdn-teal) !important;
@@ -48,68 +54,75 @@ h1, h2, h3, h4, h5, h6, .nav-link, .btn {
     text-shadow: 0 0 10px rgba(124, 224, 230, 0.5);
 }
 
-/* NEWS TICKER - Styled like a warning banner */
 .news-ticker-container {
     background: var(--sdn-orange);
     color: var(--sdn-dark);
     border-bottom: 2px solid var(--sdn-border);
     font-family: 'Rajdhani', sans-serif;
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    
+    display: flex;
+    align-items: center; 
+    
+    padding: 4px 0; 
+    line-height: 1; 
 }
 
-/* HERO SECTION */
+/* HERO SECTION - Significantly Shorter */
 .hero-section {
     position: relative;
     background: linear-gradient(rgba(18, 21, 26, 0.7), rgba(18, 21, 26, 0.9)), 
-             url('../media/dispatch_commercial.gif'); 
+              url('../media/dispatch_commercial.gif'); 
     background-size: cover;
     background-position: center;
-    min-height: 70vh;
+    
+    /* CHANGED: 70vh was huge. 45vh is sleek for desktop. */
+    min-height: 90vh; 
+    
     display: flex;
     align-items: center;
     border-bottom: 4px solid var(--sdn-cream);
 }
 
-/* BUTTONS - Hard edges, no roundness */
+/* BUTTONS */
 .btn {
-    border-radius: 0px; /* Square edges like the UI */
+    border-radius: 0px;
     border: 2px solid var(--sdn-cream);
     font-weight: 700;
     position: relative;
     transition: all 0.2s;
+    /* Optional: Make buttons slightly less chunky */
+    padding: 0.375rem 1.2rem; 
 }
 .btn-primary {
     background-color: var(--sdn-teal);
     color: var(--sdn-teal);
     border-color: var(--sdn-teal);
 }
-
 .btn-primary:hover {
     background-color: #fff;
     color: var(--sdn-dark);
-    box-shadow: 4px 4px 0px var(--sdn-cream); /* Hard shadow effect */
+    box-shadow: 4px 4px 0px var(--sdn-cream);
     transform: translate(-2px, -2px);
 }
-
 .btn-outline-light:hover {
     background-color: var(--sdn-orange);
     border-color: var(--sdn-orange);
     color: var(--sdn-dark);
 }
-
 .btn-primary-red {
     background-color: var(--sdn-teal);
     color: var(--sdn-dark);
 }
-
 .btn-primary-red:hover {
     background-color: #ca1111;
     color: var(--sdn-cream);
     box-shadow: 4px 4px 0px var(--sdn-cream); 
     transform: translate(-2px, -2px);
 }
-/* CARDS - The "File Folder" Aesthetic */
+
+/* CARDS - Transition Fixed Here */
 .sdn-card {
     background-color: var(--sdn-cream);
     color: var(--sdn-dark);
@@ -118,69 +131,135 @@ h1, h2, h3, h4, h5, h6, .nav-link, .btn {
     padding: 0;
     height: 100%;
     position: relative;
-    box-shadow: 8px 8px 0px rgba(0,0,0,0.5); /* Retro hard shadow */
-    transition: transform 0.2s;
+    box-shadow: 6px 6px 0px rgba(0,0,0,0.5); /* Slightly smaller shadow */
+    
+    /* FIX: Added fade transition here */
+    transition: transform 0.2s, background-color 0.3s ease-in-out;
 }
 .sdn-card:hover {
     transform: translateY(-5px);
+    background-color: var(--sdn-teal);
 }
 
-/* A header inside the card to look like a file tab */
 .card-header-strip {
-    background-color: #e3d5bd; /* Slightly darker cream */
+    background-color: #e3d5bd;
     border-bottom: 2px solid var(--sdn-border);
-    padding: 10px 20px;
+    padding: 8px 15px; /* Tighter padding */
     font-weight: 700;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-/* HERO IMAGES IN ROSTER */
+/* HERO IMAGES - Scaled Down & Fixed */
 .roster-img-container {
-    background-color: #aebbc9; /* Slate grey background for portraits */
+    background-color: #776a5a; 
     border-bottom: 2px solid var(--sdn-border);
     overflow: hidden;
+
+    height: 300px; 
+    width: 100%;
+    position: relative;
 }
+
 .roster-img-container img {
-    transition: transform 0.3s;
+    width: 100%;
+    height: 100%;
+    /* FIX: Covers the box, no gaps */
+    object-fit: cover; 
+    /* FIX: Focuses on faces */
+    object-position: top center; 
+    /* FIX: Default zoom state */
+    transform: scale(1.15); 
+    transition: transform 0.3s ease, background-color 0.3s;
 }
+
 .sdn-card:hover .roster-img-container img {
-    transform: scale(1.05);
+    transform: scale(1.25);
+    background-color: #46b2a9;
 }
 
 /* SECTION HEADERS */
 .section-title {
     border-left: 5px solid var(--sdn-orange);
     padding-left: 15px;
-    margin-bottom: 40px;
+    margin-bottom: 30px; /* Reduced space */
     color: var(--sdn-cream);
 }
 
-/* PARTNERS */
-.partner-logo {
-    color: var(--sdn-cream);
-    opacity: 0.4;
-    font-family: 'Rajdhani', sans-serif;
-    letter-spacing: 2px;
-    border: 1px dashed var(--sdn-teal);
-    padding: 10px 20px;
+/* =========================================
+   INFINITE PARTNER CAROUSEL
+   ========================================= */
+
+/* The outer wrapper that crops the moving track */
+.logos-overflow-wrap {
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 20px 0;
+    /* Adds a subtle vignette fade on the edges so logos don't just pop out of nowhere */
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
-/* THE "VOUGHT STYLE" FOOTER */
+/* The track that holds the double set of logos and moves */
+.logos-track {
+    display: inline-block;
+    /* The animation definition: name, duration, curve, repeat */
+    animation: scroll-left 35s linear infinite;
+}
+
+/* The actual logo images */
+.partner-logo-img {
+    height: 300px; /* Enforce uniform height */
+    width: auto;  /* Maintain aspect ratio */
+    margin: 0 20px; /* Spacing between logos */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Light up the logo slightly on hover */
+.partner-logo-img:hover {
+    filter: grayscale(0%) brightness(100%);
+    transform: scale(1.10);
+}
+
+/* The animation keyframes that make it loop */
+@keyframes scroll-left {
+    0% {
+        /* Start at the beginning */
+        transform: translateX(0);
+    }
+    100% {
+        /* Move exactly 50% to the left. Because we duplicated the list, 
+           the 50% mark looks exactly like the start mark. */
+        transform: translateX(-50%);
+    }
+}
+
+/* On mobile, speed it up slightly as there is less distance to travel */
+@media (max-width: 768px) {
+    .logos-track {
+        animation: scroll-left 20s linear infinite;
+    }
+    .partner-logo-img {
+        height: 40px; /* Slightly smaller logos on phone */
+        margin: 0 25px;
+    }
+}
+
+/* FOOTER - Compacted */
 footer {
-    background-color: #0b0f19; /* Deep Navy (Vought Color) */
-    color: #8fa1b3; /* Muted Blue-Grey text */
-    padding-top: 80px;
-    font-size: 0.9rem;
+    background-color: #0b0f19;
+    color: #8fa1b3;
+    padding-top: 50px; /* Reduced from 80px */
+    font-size: 0.85rem;
 }
 footer h5 {
     color: white;
     font-weight: 700;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 footer ul li {
-    margin-bottom: 12px;
+    margin-bottom: 8px;
 }
 footer a {
     color: #8fa1b3;
@@ -191,8 +270,43 @@ footer a:hover {
     color: white;
 }
 .footer-bottom {
-    background-color: #06080e; /* Even darker for the bottom strip */
-    padding: 30px 0;
-    margin-top: 60px;
+    background-color: #06080e;
+    padding: 20px 0;
+    margin-top: 40px;
     border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+   ========================================= */
+@media (max-width: 768px) {
+    /* Reset font size for mobile so text isn't too tiny to read */
+    html {
+        font-size: 16px; 
+    }
+
+    .hero-section {
+        min-height: 40vh; /* Even smaller on phone */
+        background-position: center top;
+    }
+    h1 {
+        font-size: 2.2rem;
+    }
+    .navbar-brand img {
+        height: 35px;
+    }
+    .sdn-card {
+        margin-bottom: 20px;
+        box-shadow: 4px 4px 0px rgba(0,0,0,0.5);
+    }
+    .roster-img-container {
+        height: 200px; /* Mobile needs slightly taller images for visibility */
+    }
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    footer {
+        text-align: center;
+    }
 }
