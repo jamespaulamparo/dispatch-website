@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SDN | Superhero Dispatch Network</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../static/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -35,7 +35,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="#">
-                <img src="../media/SDNLogo.webp" alt="SDN Logo">
+                <img src="../static/media/SDNLogo.webp" alt="SDN Logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -53,7 +53,7 @@
 
     <header class="hero-section">
         <video autoplay muted loop playsinline class="hero-bg-video">
-           <source src="../media/sdn-commercial.webm" type="video/webm">
+           <source src="../static/media/sdn-commercial.webm" type="video/webm">
         </video>
 
         <div class="hero-overlay"></div>
@@ -82,7 +82,7 @@
                         <div class="progress" style="height: 10px; border: 1px solid #333;">
                             <div class="progress-bar bg-success" style="width: 85%"></div>
                         </div>
-                        <small class="text-success fw-bold mt-2 d-block">↑ 12% EFFICENCY</small>
+                        <small class="text-success fw-bold mt-2 d-block">↑ 12% From Last Month</small>
                     </div>
                 </div>
             </div>
@@ -127,91 +127,53 @@
                 </div>
             </div>
             
-            <div class="row g-4">
-                <div class="col-md-3 col-6">
-                    <div class="sdn-card">
-                        <div class="roster-img-container">
-                            <img src="../media/phenomaman.webp" class="card-img-top p-2" alt="Phenomaman">
-                        </div>
-                        <div class="card-body text-center p-3">
-                            <h4 class="fw-bold m-0">PHENOMAMAN</h4>
-                            <div class="text-muted small fw-bold mt-1">A-Team</div>
-                            <hr class="my-2 border-dark">
-                            <small>SDN's Greatest Hero</small>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-3 col-6">
-                    <div class="sdn-card">
-                        <div class="roster-img-container">
-                            <img src="../media/blonde-blazer.webp" class="card-img-top p-2" alt="Blonde Blazer">
-                        </div>
-                        <div class="card-body text-center p-3">
-                            <h4 class="fw-bold m-0">BLONDE BLAZER</h4>
-                            <div class="text-muted small fw-bold mt-1">Torrence Branch Leader</div>
-                            <hr class="my-2 border-dark">
-                            <small>Radiant Luminary</small>
-                        </div>
-                    </div>
-                </div>
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 
-                <div class="col-md-3 col-6">
+        <div class="row g-4">
+            {% for hero in heroes %}
+            <div class="col-md-3 col-6">
+                <a href="/hero/{{ hero.id }}" style="text-decoration: none;">
                     <div class="sdn-card">
                         <div class="roster-img-container">
-                            <img src="../media/brainbook.webp" class="card-img-top p-2" alt="Brainbook">
+                            <img src="{{ url_for('static', filename='media/' + hero.image_filename) }}" class="card-img-top p-2" alt="{{ hero.name }}">
                         </div>
                         <div class="card-body text-center p-3">
-                            <h4 class="fw-bold m-0">BRAINBOOK</h4>
-                            <div class="text-muted small fw-bold mt-1">A-Team</div>
+                            <h4 class="fw-bold m-0">{{ hero.name }}</h4>
+                            <div class="text-muted small fw-bold mt-1">{{ hero.occupation }}</div>
                             <hr class="my-2 border-dark">
-                            <small>Genius Intellect</small>
+                            <small>{{ hero.alias }}</small>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-md-3 col-6">
-                    <div class="sdn-card">
-                        <div class="roster-img-container">
-                            <img src="../media/pom-pom.webp" class="card-img-top p-2" alt="Pom Pom">
-                        </div>
-                        <div class="card-body text-center p-3">
-                            <h4 class="fw-bold m-0">POM POM</h4>
-                            <div class="text-muted small fw-bold mt-1">A-Team</div>
-                            <hr class="my-2 border-dark">
-                            <small>Agile Cheerleader</small>
-                        </div>
-                    </div>
-                </div>
+                </a>
             </div>
+            {% endfor %}
         </div>
-    </section>
 
     <section class="py-5 text-center border-top border-secondary partnership-section" style="background-color: #0b0e12; overflow: hidden;">
         <div class="container mb-4">
-            <p class="text-uppercase fw-bold text-info ls-1">/// TRUSTED GLOBAL PARTNERS ///</p>
-            <p class="text-muted small opacity-50">Powering the world's defense infrastructure.</p>
+            <p class="text-uppercase fw-bold text-info ls-1">/// GLOBAL PARTNERS ///</p>
+            <p class="text-info ls-1">Trusted By Organizations All Around America</p>
         </div>
 
         <div class="logos-overflow-wrap">
              <div class="logos-track">
-                <img src="../media/logos/vand-co.png" class="partner-logo-img" alt="Vand-Co">
-                <img src="../media/logos/yacht club.png" class="partner-logo-img" alt="Sharkboyzzz Yacht Club">
-                <img src="../media/logos/jollibee.png" class="partner-logo-img" alt="Jaboolee">
-                <img src="../media/logos/missubibi.png" class="partner-logo-img" alt="Missubibi">
-                <img src="../media/logos/bank.png" class="partner-logo-img" alt="Alligator Trading & Co.">
+                <img src="../static/media/logos/vand-co.png" class="partner-logo-img" alt="Vand-Co">
+                <img src="../static/media/logos/yacht club.png" class="partner-logo-img" alt="Sharkboyzzz Yacht Club">
+                <img src="../static/media/logos/jollibee.png" class="partner-logo-img" alt="Jaboolee">
+                <img src="../static/media/logos/missubibi.png" class="partner-logo-img" alt="Missubibi">
+                <img src="../static/media/logos/bank.png" class="partner-logo-img" alt="Alligator Trading & Co.">
 
-                <img src="../media/logos/vand-co.png" class="partner-logo-img" alt="Vand-Co">
-                <img src="../media/logos/yacht club.png" class="partner-logo-img" alt="Sharkboyzzz Yacht Club">
-                <img src="../media/logos/jollibee.png" class="partner-logo-img" alt="Jaboolee">
-                <img src="../media/logos/missubibi.png" class="partner-logo-img" alt="Missubibi">
-                <img src="../media/logos/bank.png" class="partner-logo-img" alt="Alligator Trading & Co.">
+                <img src="../static/media/logos/vand-co.png" class="partner-logo-img" alt="Vand-Co">
+                <img src="../static/media/logos/yacht club.png" class="partner-logo-img" alt="Sharkboyzzz Yacht Club">
+                <img src="../static/media/logos/jollibee.png" class="partner-logo-img" alt="Jaboolee">
+                <img src="../static/media/logos/missubibi.png" class="partner-logo-img" alt="Missubibi">
+                <img src="../static/media/logos/bank.png" class="partner-logo-img" alt="Alligator Trading & Co.">
 
-                <img src="../media/logos/vand-co.png" class="partner-logo-img" alt="Vand-Co">
-                <img src="../media/logos/yacht club.png" class="partner-logo-img" alt="Sharkboyzzz Yacht Club">
-                <img src="../media/logos/jollibee.png" class="partner-logo-img" alt="Jaboolee">
-                <img src="../media/logos/missubibi.png" class="partner-logo-img" alt="Missubibi">
-                <img src="../media/logos/bank.png" class="partner-logo-img" alt="Alligator Trading & Co.">
+                <img src="../static/media/logos/vand-co.png" class="partner-logo-img" alt="Vand-Co">
+                <img src="../static/media/logos/yacht club.png" class="partner-logo-img" alt="Sharkboyzzz Yacht Club">
+                <img src="../static/media/logos/jollibee.png" class="partner-logo-img" alt="Jaboolee">
+                <img src="../static/media/logos/missubibi.png" class="partner-logo-img" alt="Missubibi">
+                <img src="../static/media/logos/bank.png" class="partner-logo-img" alt="Alligator Trading & Co.">
             </div>
         </div>
     </section>
