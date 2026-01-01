@@ -292,6 +292,18 @@ footer a:hover {
 }
 
 /* =========================================
+   TRANSITION EFFECTS
+   ========================================= */
+.sdn-card, 
+.sdn-card .roster-img-container img, 
+.sdn-card h4, 
+.sdn-card small, 
+.sdn-card .text-muted {
+    transition: all 0.2s ease-in-out !important;
+}
+
+
+/* =========================================
    MOBILE RESPONSIVENESS
    ========================================= */
 @media (max-width: 768px) {
