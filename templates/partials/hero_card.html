@@ -1,0 +1,19 @@
+{% load static %}
+<div class="col-md-3 col-6">
+    <a href="{% url 'hero_detail' hero.id %}" style="text-decoration: none;"> 
+        <div class="sdn-card h-100">
+            <div class="roster-img-container">
+                <img src="{% static 'media/' %}{{ hero.image_filename }}" class="card-img-top p-2" alt="{{ hero.name }}">
+            </div>
+            <div class="card-body text-center p-3">
+                <h4 class="fw-bold m-0">{{ hero.name }}</h4>
+                
+                <div class="text-muted small fw-bold mt-1">{{ hero.occupation }}</div>
+                
+                <hr class="my-2 border-dark">
+                
+                <small>{{ hero.alias }}</small>
+            </div>
+        </div>
+    </a>
+</div>

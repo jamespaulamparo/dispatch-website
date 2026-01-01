@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SDN | Operative Roster</title>
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body style="background-color: #0b0e12; color: #f4ebd9;">
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top border-bottom border-secondary" style="background: rgba(11, 14, 18, 0.95);">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="{% url 'home' %}">
+                <img src="{% static 'media/SDNLogo.webp' %}" alt="SDN Logo" style="height: 40px;">
+            </a>
+            <div class="ms-auto">
+                <a href="{% url 'home' %}" class="btn btn-outline-info btn-sm">← BACK TO DASHBOARD</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <h1 class="display-4 fw-bold text-white">MEET YOUR HEROES</h1>
+            <p class="text-muted">Explore the elite divisions of the Superhero Dispatch Network.</p>
+        </div>
+
+        {% if branch_leaders %}
+        <div class="mb-5">
+            <h3 class="text-info mb-4"><i class="fas fa-star me-2"></i> BRANCH LEADERS</h3>
+            <div class="row g-4">
+                {% for hero in branch_leaders %}
+                    {% include "partials/hero_card.html" %}
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+        {% if a_team %}
+        <div class="mb-5">
+            <h3 class="text-warning mb-4"><i class="fas fa-shield-alt me-2"></i> A-TEAM</h3>
+            <div class="row g-4">
+                {% for hero in a_team %}
+                    {% include "partials/hero_card.html" %}
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+        {% if z_team %}
+        <div class="mb-5">
+            <h3 class="text-danger mb-4"><i class="fas fa-skull-crossbones me-2"></i> Z-TEAM</h3>
+            <div class="row g-4">
+                {% for hero in z_team %}
+                    {% include "partials/hero_card.html" %}
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+    </div>
+
+    <footer class="py-4 text-center border-top border-secondary mt-5">
+        <small class="text-muted">SDN OPERATIVE DATABASE v2.0.6</small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
