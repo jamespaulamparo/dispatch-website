@@ -15,16 +15,35 @@
 </head>
 <body style="background-color: #0b0e12; color: #f4ebd9;">
 
-    <nav class="navbar navbar-dark py-3">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top border-bottom border-secondary" style="background: rgba(11, 14, 18, 0.95);">
         <div class="container">
-            <a href="{% url 'roster' %}" class="btn btn-sm btn-outline-light rounded-pill px-3">
-                <i class="fas fa-arrow-left me-2"></i> Back to Roster
+            <a class="navbar-brand fw-bold" href="{% url 'home' %}">
+                <img src="{% static 'media/SDNLogo.webp' %}" alt="SDN Logo" style="height: 40px;">
             </a>
-            <span class="text-uppercase fw-bold text-muted small">Official SDN Hero Profile</span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link px-3" href="{% url 'home' %}">DASHBOARD</a>
+                    <a class="nav-link active px-3" href="{% url 'roster' %}">HERO ROSTER</a>
+                    <a class="nav-link px-3" href="{% url 'services' %}">SERVICES</a>
+                    <a class="nav-link px-3 text-warning" href="{% url 'login' %}">LOGIN <i class="fas fa-lock ms-1"></i></a>
+                </div>
+            </div>
         </div>
     </nav>
 
-    <div class="container py-4">
+    <div class="container py-5">
+        
+        <div class="row mb-4">
+            <div class="col-12">
+                <a href="{% url 'roster' %}" class="text-decoration-none text-muted small fw-bold">
+                    <i class="fas fa-chevron-left me-2"></i> RETURN TO FULL ROSTER
+                </a>
+            </div>
+        </div>
+
         <div class="row align-items-center">
             
             <div class="col-md-5 mb-4 mb-md-0">
@@ -60,7 +79,8 @@
                     </div>
                     <div class="col-6">
                         <div class="stat-label">Years Active</div>
-                        <div class="stat-value">3 Years</div> </div>
+                        <div class="stat-value">3 Years</div> 
+                    </div>
                 </div>
 
                 <div class="mb-5">
@@ -83,5 +103,6 @@
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

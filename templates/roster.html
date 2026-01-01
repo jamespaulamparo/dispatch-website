@@ -15,8 +15,16 @@
             <a class="navbar-brand fw-bold" href="{% url 'home' %}">
                 <img src="{% static 'media/SDNLogo.webp' %}" alt="SDN Logo" style="height: 40px;">
             </a>
-            <div class="ms-auto">
-                <a href="{% url 'home' %}" class="btn btn-outline-info btn-sm">← BACK TO DASHBOARD</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link px-3" href="{% url 'home' %}">DASHBOARD</a>
+                    <a class="nav-link active px-3" href="{% url 'roster' %}">HERO ROSTER</a>
+                    <a class="nav-link px-3" href="{% url 'services' %}">SERVICES</a>
+                    <a class="nav-link px-3 text-warning" href="{% url 'login' %}">LOGIN <i class="fas fa-lock ms-1"></i></a>
+                </div>
             </div>
         </div>
     </nav>
